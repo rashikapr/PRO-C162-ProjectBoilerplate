@@ -61,7 +61,7 @@ AFRAME.registerComponent("bowling-balls", {
         elementHit.getAttribute("position")
       );
 
-      elementHit.body.applyF(impulse, worldPoint);
+      elementHit.body.applyForce(impulse, worldPoint);
 
       //remove event listener
       element.removeEventListener("collide", this.removeBall);
