@@ -46,12 +46,7 @@ AFRAME.registerComponent("bowling-balls", {
     });
   },
   removeBall: function (e) {
-    //Original entity (bullet)
-    console.log(e.detail.target.el);
-
-    //Other entity, which bullet touched.
-    console.log(e.detail.body.el);
-
+    
     //bullet element
     var element = e.detail.target.el;
 
