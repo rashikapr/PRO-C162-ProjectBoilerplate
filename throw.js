@@ -38,39 +38,13 @@ AFRAME.registerComponent("bowling-balls", {
           mass: "10",
         });
 
-        //add the collide event listener to the bullet
-        ball.addEventListener("collide", this.removeBall);
+        //Add code here
 
         scene.appendChild(ball);
       }
     });
   },
-  removeBall: function (e) {
-    
-    //bullet element
-    var element = e.detail.target.el;
-
-    //element which is hit
-    var elementHit = e.detail.body.el;
-
-    if (elementHit.id.includes("pin")) {
-      
-      //impulse and point vector
-      var impulse = new CANNON.Vec3(0,1,-15);
-      var worldPoint = new CANNON.Vec3().copy(
-        elementHit.getAttribute("position")
-      );
-
-      elementHit.body.applyForce(impulse, worldPoint);
-
-      //remove event listener
-      element.removeEventListener("collide", this.removeBall);
-
-      //remove the bullets from the scene
-      var scene = document.querySelector("#scene");
-      scene.removeChild(element);
-    }
-  },
+  
 });
 
 
